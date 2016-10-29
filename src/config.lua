@@ -1,7 +1,7 @@
 -- Configuration
 --
 -- LICENCE: http://opensource.org/licenses/MIT
--- 2016-10-11 tschaban https://github.com/tschaban
+-- 2016-10-29 tschaban https://github.com/tschaban
 
 local module = {}
 
