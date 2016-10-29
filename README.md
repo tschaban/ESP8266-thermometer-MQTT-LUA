@@ -1,9 +1,9 @@
 **This is thermometer implementation on ESP9266.**
 Values are published to MQTT Broker. It can be later consumed by other services eg home automation software like openHAB
 
-MQTT Topic /sensor/DeviceID/temperature
+MQTT Topic /sensor/ID/temperature
 
-where DeviceID can be set in the configuration file
+where ID can be set in the configuration file, default is ESP8266 ChipID
 
 **Hardware**
 - ESP8266 (Mini NodeMCU by WeMos 4MB)
@@ -21,7 +21,7 @@ Configuration should be made in config.lua file
 | MQTT_PORT  | MQTT Port, default 1883 |
 | MQTT_USER  | MQTT User name, leave blank if there is no user authentication at your MQTT broker |
 | MQTT_PASSWORD  | MQTT User name, leave blank if there is no user authentication at your MQTT broker |
-| MQTT_ID   | Device ID, use either numbers or chars no space or special characters, default is ChipID |
+| ID | Device ID, use either numbers or chars no space or special characters, default is ChipID |
 | INTERVAL   | How often get temperature from the sensor, default 5000msec (5sec) |
 | TEMP_SENSOR   | PIN ID where sensor is connected to |
 | TEMP_CORRECTION   | Add any value if you want to correct sensor value |
