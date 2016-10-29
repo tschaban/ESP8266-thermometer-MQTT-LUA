@@ -20,30 +20,24 @@ end
 local function publish()
     counter = counter + 1
 
-
     lcd.display({
         "Temperature : " .. currentTemperature .. " C",
         "Free mem  : " .. freeMemory() .. " KB",
         "Requested : " .. counter,
+        "Published : " .. sent,
         "",
-        "",
-        "Processing"})
-
-    print("Reading sensor info")
-
-    print("CORRECTION = " .. config.TEMP_CORRECTION)
+        "Processing..."
+    })
 
     local s = sensor.readNumber()
     local t = 0
     if s ~= nil then
-      t = s + config.TEMP_CORRECTION
+        t = s + config.TEMP_CORRECTION
     end
 
-    print("Calculation")
     if currentTemperature ~= t then
         currentTemperature = t
         sent = sent + 1
-        print("Publishing")
         m:publish(config.MQTT_TOPIC .. config.ID .. "/temperature", t, 0, 0)
     end
 
@@ -52,9 +46,10 @@ local function publish()
         "Temperature : " .. currentTemperature .. " C",
         "Free mem  : " .. freeMemory() .. " KB",
         "Requested : " .. counter,
+        "Published : " .. sent,
         "",
-        "",
-        ""})
+        "Waiting..."
+    })
 end
 
 
@@ -64,8 +59,8 @@ local function mqttStart()
     lcd.display({
         "Booting",
         "Connecting to MQTT",
-        "- " .. config.MQTT_HOST,
-        "",
+        "Broker: " .. config.MQTT_HOST,
+        "ID: " .. config.ID,
         "",
         "Please wait..."
     })
@@ -85,16 +80,11 @@ local function mqttStart()
             publish()
         end)
     end)
-
 end
 
 
 function module.start()
     lcd.start()
-    print("LCD")
-    sensor.setup(config.TEMP_SENSOR)
-    print("MQTT start")
-
     lcd.display({
         "Booting",
         "",
@@ -103,7 +93,7 @@ function module.start()
         "",
         "Please wait..."
     })
-
+    sensor.setup(config.TEMP_SENSOR)
     mqttStart()
 end
 
