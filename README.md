@@ -1,4 +1,4 @@
-This is thermometer implementation on ESP8266.
+**This is thermometer implementation on ESP9266.**
 Values are published to MQTT Broker. It can be later consumed by other services eg home automation software like openHAB
 
 MQTT Topic /sensor/DeviceID/temperature
@@ -6,7 +6,7 @@ MQTT Topic /sensor/DeviceID/temperature
 where DeviceID can be set in the configuration file
 
 **Hardware**
-- ESP8266 (eg Mini NodeMCU by WeMos 4MB)
+- ESP8266 (Mini NodeMCU by WeMos 4MB)
 - DS18B20 sensor
 - 128X64 OLED LCD 0.96" I2C
 
@@ -31,7 +31,7 @@ Configuration should be made in config.lua file
 
 **Installation**
 
-Following files have to be compiled on ESP8266 to lc compiled files
+Following files have to be compiled on ESP8266
 - config.lua
 - main.lua
 - ds18b20.lua
