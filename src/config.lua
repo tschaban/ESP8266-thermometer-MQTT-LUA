@@ -20,6 +20,7 @@ module.INTERVAL = 5000
 
 module.TEMP_SENSOR = 2
 module.TEMP_CORRECTION = 0
+module.TEMP_UNIT = "C"
 
 module.SDA = 5 -- GPIO14 / D5
 module.SCL = 6 -- GPIO12 / D6

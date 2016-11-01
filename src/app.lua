@@ -21,7 +21,7 @@ local function publish()
     counter = counter + 1
 
     lcd.display({
-        "Temperature : " .. currentTemperature .. " C",
+        "Temperature : " .. currentTemperature .. " " .. config.TEMP_UNIT,
         "Free mem  : " .. freeMemory() .. " KB",
         "Requested : " .. counter,
         "Published : " .. sent,
@@ -29,7 +29,7 @@ local function publish()
         "Processing..."
     })
 
-    local s = sensor.readNumber()
+    local s = sensor.readNumber(nil,config.TEMP_UNIT)
     local t = 0
     if s ~= nil then
         t = s + config.TEMP_CORRECTION
@@ -43,7 +43,7 @@ local function publish()
 
 
     lcd.display({
-        "Temperature : " .. currentTemperature .. " C",
+        "Temperature : " .. currentTemperature .. " " .. config.TEMP_UNIT,
         "Free mem  : " .. freeMemory() .. " KB",
         "Requested : " .. counter,
         "Published : " .. sent,
