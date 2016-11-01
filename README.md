@@ -1,4 +1,4 @@
-**This is thermometer implementation on ESP9266.**
+**This is thermometer implementation on ESP8266.**
 Values are published to MQTT Broker. It can be later consumed by other services eg home automation software like openHAB
 
 MQTT Topic /sensor/ID/temperature
