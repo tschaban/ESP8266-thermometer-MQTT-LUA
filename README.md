@@ -28,7 +28,6 @@ Configuration should be made in config.lua file
 | SDA   | LCD sda PIN |
 | SCL   | LCD scl PIN |
 
-
 **Installation**
 
 Following files have to be compiled on ESP8266
