@@ -13,7 +13,9 @@
 * 128X64 OLED LCD 0.96" I2C
 
 **MQTT Topic** 
+
 ```/sensor/*ID*/temperature```
+
 * it returns value in integer in unit defined in config file
 * _ID_ can be set in the configuration file
 
