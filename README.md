@@ -15,7 +15,7 @@
 **MQTT Topic** 
 
 ```
-/sensor/*ID*/temperature
+/sensor/ID/temperature
 ```
 
 * it returns value in integer in unit defined in config file
